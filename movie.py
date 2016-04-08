@@ -36,23 +36,26 @@ class User:
 
 
 with open("u.item", encoding="latin_1") as item_file:
-    movie_obj_list = []
+    movies = {}
     reader = csv.DictReader(item_file, delimiter='|', fieldnames=['movie_id', 'title'])
     for row in reader:
-        movie_obj_list.append(Movie(row['movie_id'], row['title']))
-# print(movie_obj_list)
+        movie = Movie(row['movie_id'], row['title'])
+        movies[movie.movie_id] = movie
+# print(movies)
 
 
 with open("u.data", encoding="latin_1") as item_file:
-    rating_obj_list = []
+    ratings = {}
     reader = csv.DictReader(item_file, delimiter='\t', fieldnames=['user_id', 'movie_id', 'rating'])
     for row in reader:
-        rating_obj_list.append(Rating(row['user_id'], row['movie_id'], row['rating']))
-# print(rating_obj_list)
+        rating = Rating(row['user_id'], row['movie_id'], row['rating'])
+        ratings[rating.movie_id] = rating
+# print(ratings)
 
 with open("u.user", encoding="latin_1") as item_file:
-    user_obj_list = []
+    users = {}
     reader = csv.DictReader(item_file, delimiter='|', fieldnames=['user_id', 'age', 'gender', 'occupation', 'zip_code'])
     for row in reader:
-        user_obj_list.append(User(row['user_id'], row['age'], row['gender'], row['occupation'], row['zip_code']))
-print(user_obj_list)
+        user = User(row['user_id'], row['age'], row['gender'], row['occupation'], row['zip_code'])
+        users[user.user_id] = user
+# print(users)
