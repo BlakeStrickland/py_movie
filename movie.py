@@ -52,6 +52,7 @@ with open("u.data", encoding="latin_1") as item_file:
         ratings[rating.movie_id] = rating
 # print(ratings)
 
+
 with open("u.user", encoding="latin_1") as item_file:
     users = {}
     reader = csv.DictReader(item_file, delimiter='|', fieldnames=['user_id', 'age', 'gender', 'occupation', 'zip_code'])
