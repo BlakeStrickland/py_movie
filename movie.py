@@ -1,4 +1,6 @@
 import csv
+import re
+
 class Movie:
     def __init__(self, movie_id, title):
         self.movie_id = movie_id
@@ -66,3 +68,52 @@ with open("u.user", encoding="latin_1") as item_file:
         user = User(row['user_id'], row['age'], row['gender'], row['occupation'], row['zip_code'])
         users[user.user_id] = user
 # print(users)
+
+'''
+Get movie by id -
+
+user_input = int(input("Please enter a movie id: "))
+if str(user_input) in movies.keys():
+    print("the movie id is: {}, the title is : {}".format(user_input, movies[str(user_input)]))
+
+'''
+
+'''
+Get movie by title - 
+
+user_input = input("Please enter a movie title (partials included): ")
+
+list_of_titles = []
+user_output = []
+
+for movie in movies:
+    to_be_reg = movies[movie].title.lower()
+    list_of_titles.append(re.sub(r'\([^)]*\)', '', to_be_reg))
+    matching = [title.title() for title in list_of_titles if user_input in title]
+
+
+
+# if any(user_input in list_of_titles for ext in extensionsToCheck):
+#     print(url_string)
+
+# if user_input in list_of_titles:
+#
+#     user_output.append(user_input)
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####
