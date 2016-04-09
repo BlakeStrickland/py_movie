@@ -7,6 +7,12 @@ class Movie:
     def __str__(self):
         return str(self.movie_id + " " + self.title)
 
+    # def movie_by_id(self, user_input, movies):
+    # # user_input = int(input("Please enter a movie id: "))
+    #     if str(user_input) in movies.keys():
+    #         return movies[str(user_input)]
+    #         # print("the movie id is: {}, the title is : {}".format(user_input, movies[str(user_input)]))
+
 class Rating:
     def __init__(self, user_id, movie_id, rating):
         self.user_id = user_id
